@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask & MySQL App</title>
+</head>
+<body>
+    <h1>Users List</h1>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name }} - {{ user.email }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add a New User</h2>
+    <form action="/add_user" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <input type="submit" value="Add User">
+    </form>
+</body>
+</html>
